@@ -1,13 +1,20 @@
 # graph
 
-### Install
+## Install
 
-#### Linux && UNIX
-'''bash
-sudo python setup.py install
-'''
+### Fast
+```bash
+pip install -r requirements.txt
+```
+
+### Other
 
 #### Windows
-'''bash
+```bash
 python setup.py install
-'''
+```
+
+#### Linux && UNIX
+```bash
+sudo python setup.py install
+```
