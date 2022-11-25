@@ -2,12 +2,12 @@
 
 ### Install
 
-#### Windows
-
-Execute setup.bat
-
-
 #### Linux && UNIX
-```bash
-./setup.sh
-```
+'''bash
+sudo python setup.py install
+'''
+
+#### Windows
+'''bash
+python setup.py install
+'''
