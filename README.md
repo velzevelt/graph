@@ -11,6 +11,7 @@ pip install -r requirements.txt
 </ol>
 
 ## Сборка скрипта в exe файл
+
 <ol> <li>Открываем командную строку в папке src</li>
      <li>Вводим команду 
 ```bash
