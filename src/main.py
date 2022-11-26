@@ -1,22 +1,57 @@
-#!/usr/bin/python
-
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
+import matplotlib
 import numpy as np
 import pandas as pd
+import tkinter as tk
 
-plt.style.use('_mpl-gallery')
+matplotlib.use('TkAgg')
 
-# make data:
-np.random.seed(3)
-x = 0.5 + np.arange(8)
-y = np.random.uniform(2, 7, len(x))
+from matplotlib.figure import Figure
 
-# plot
-fig, ax = plt.subplots()
+from matplotlib.backends.backend_tkagg import (
+    FigureCanvasTkAgg,
+    NavigationToolbar2Tk
+)
 
-ax.bar(x, y, width=1, edgecolor="white", linewidth=0.7)
 
-ax.set(xlim=(0, 8), xticks=np.arange(1, 8),
-       ylim=(0, 8), yticks=np.arange(1, 8))
 
-plt.show()
+class App(tk.Tk):
+    def __init__(self):
+        super().__init__()
+
+        self.title('Программа')
+
+        # prepare data
+        data = {
+            'Python': 11.27,
+            'C': 11.16,
+            'Java': 10.46,
+            'C++': 7.5,
+            'C#': 5.26
+        }
+        languages = data.keys()
+        popularity = data.values()
+
+        # create a figure
+        figure = Figure(figsize=(6, 4), dpi=100)
+
+        # create FigureCanvasTkAgg object
+        figure_canvas = FigureCanvasTkAgg(figure, self)
+
+        # create the toolbar
+        NavigationToolbar2Tk(figure_canvas, self)
+
+        # create axes
+        axes = figure.add_subplot()
+
+        # create the barchart
+        axes.bar(languages, popularity)
+        axes.set_title('Top 5 Programming Languages')
+        axes.set_ylabel('Popularity')
+
+        figure_canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1)
+
+
+if __name__ == '__main__':
+    app = App()
+    app.mainloop()
