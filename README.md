@@ -1,20 +1,20 @@
 # graph
 
-## Install
+## Установка
 
-### Fast
+<ol> <li>Устанавливаем на компьютер pip, если он не установлен</li>
+     <li>Вводим следующую команду в консоли. (Убедитесь, что командная строка открыта в папке с проектом)
 ```bash
 pip install -r requirements.txt
 ```
+      </li>
+</ol>
 
-### Other
-
-#### Windows
+## Сборка скрипта в exe файл
+<ol> <li>Открываем командную строку в папке src</li>
+     <li>Вводим команду 
 ```bash
-python setup.py install
-```
-
-#### Linux && UNIX
-```bash
-sudo python setup.py install
-```
+pyinstaller --onefile main.py
+```     
+     </li>
+</ol>
