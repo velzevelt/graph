@@ -54,8 +54,13 @@ class App(ctk.CTk):
 
         figure_canvas.get_tk_widget().pack(side=tk.TOP, fill=tk.BOTH, expand=1, padx=10, pady=10)
 
-        button_1 = ctk.CTkButton(text="Test Button")
+        button_1 = ctk.CTkButton(text="Test Button", padx=5, pady=5, command=self.button_callback)
         button_1.pack(side=tk.BOTTOM)
+
+    def button_callback(self):
+        print(1)
+
+
 
 
 if __name__ == '__main__':
